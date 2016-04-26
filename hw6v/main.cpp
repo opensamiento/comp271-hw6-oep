@@ -16,7 +16,7 @@ int str_conversion (string a); //convert string to an int thru a char array
 int main()
 {
     int M = 450000000; //max value for hashing
-    int n = 65000;
+    int n = 65000; //number of SSNs in file
     int answer, cuatro, index, key, next_index;
     vector <string> read_ints;
     int *hash_table=new int [n];
@@ -41,9 +41,9 @@ int main()
             for (int c=0;c<n;c++)
             {
                 if (hash_table[c]==0)
-                    next_index = c;
+                    next_index = c; //find next available space, save it
             }
-            if (hash_table [index]!=0)
+            if (hash_table [index]!=0) //space is already occupied
                 hash_table[next_index] = key;
             else
                 hash_table [index] = key;
@@ -52,7 +52,7 @@ int main()
             hash_table [cuatro] = key;
     }
 
-    write_to_file(hash_table, M); //write out hash table to file
+    write_to_file(hash_table, n); //write out hash table to file
     cout << "Finished writing file, please check it! \n"; //completion message!
     return 0;
 }
@@ -115,9 +115,9 @@ int str_conversion (string n_str)
 {
     int real_int;
     char * new_array = new char [9];
-    for (int b=0;b<9;b++)
+    for (int b=0;b<9;b++) //copy chars into each other
         new_array [b] = n_str [b];
-    real_int = atoi(new_array);
+    real_int = atoi(new_array); //new_array contains SSN in char form, convert to int
     return real_int;
 }
 
