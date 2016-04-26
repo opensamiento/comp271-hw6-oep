@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1461656354 source:c:\users\opens\desktop\cstuff\hw6v\main.cpp
+	<iostream>
+	<fstream>
+	<cstring>
+	<stdlib.h>
+	<vector>
+
